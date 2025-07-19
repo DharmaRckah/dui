@@ -1,13 +1,19 @@
-import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
-import React from 'react';
 
-const TotalRewardsCard = ({ title, amount, highlight = false }) => {
-  return (
-    <div className={`p-4 rounded-xl shadow-md h-fit ${highlight ? 'bg-blue-500 text-white' : 'bg-white'}`}>
-      <h2 className="text-md font-semibold">{title} <InfoOutlineIcon/></h2>
-      <p className={`text-3xl font-bold mt-2 ${highlight ? '' : 'text-blue-600'}`}>{amount}</p>
+import React from 'react';
+import InfoOutlineIcon from '@mui/icons-material/InfoOutline';
+
+const TotalRewardsCard = ({ title, amount, highlight }) => (
+  <div
+    className={`p-4 rounded-lg shadow-md flex flex-col justify-center text-center h-32 min-w-[200px] ${
+      highlight ? 'bg-blue-100' : 'bg-gray-50'
+    }`}
+  >
+    <div className="flex items-center justify-between">
+      <h3 className="text-sm text-gray-700">{title}</h3>
+      <InfoOutlineIcon fontSize="small" className="text-gray-500" />
     </div>
-  );
-};
+    <p className="text-2xl mt-4">{amount}</p>
+  </div>
+);
 
 export default TotalRewardsCard;
